@@ -1,0 +1,14 @@
+{
+  "name": "astral-velvet-demo-pwa",
+  "version": "1.0.0",
+  "description": "Astral Velvet ✦ by Celeste Vance (@celestevance.astro) — Flagship 6-Tab Astrology PWA & NASA JPL Ephemeris Demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "midnight-drop": "node scripts/midnight_drop.js"
+  },
+  "dependencies": {
+    "astronomy-engine": "^2.1.19"
+  }
+}
+

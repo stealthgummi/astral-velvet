@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Astral Velvet ✦ by Celeste Vance · @celestevance.astro</title>
+  <meta name="description" content="Personal NASA JPL Ephemeris, 360° Whole-Sign Natal Chart, 2H/8H Prosperity Blueprint, 8 Signature Asteroids & Somatic Sanctuary by Celeste Vance (@celestevance.astro)." />
+  <meta name="theme-color" content="#070A16" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="./images/celeste_avatar.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Cinzel+Decorative:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="ambient-orb orb-gold"></div>
+  <div class="ambient-orb orb-indigo"></div>
+  <div class="ambient-orb orb-rose"></div>
+
+  <div class="app-shell">
+    <!-- Top Header -->
+    <header class="top-header glass-card">
+      <div class="brand-row">
+        <div class="avatar-ring">
+          <img src="./images/celeste_avatar.svg" alt="Celeste Vance" class="avatar-img" />
+          <span class="live-dot" title="Live NASA JPL Ephemeris"></span>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title-row">
+            <h1>Astral Velvet ✦</h1>
+            <span class="pill-badge">LIVE EPHEMERIS</span>
+          </div>
+          <p class="brand-sub">Celeste Vance · @celestevance.astro</p>
+        </div>
+      </div>
+      <button id="open-birth-modal-btn" class="btn-chip" title="Set Exact Birth Chart">
+        <span>🧭</span> <span id="active-user-pill">Set Birth Chart</span>
+      </button>
+    </header>
+
+    <!-- Main Content Viewport -->
+    <main class="tab-viewport">
+      <!-- ==================== TAB 1: TODAY (RADAR & HOROSCOPES) ==================== -->
+      <section id="tab-today" class="tab-pane active">
+        <div class="hero-crucible-card glass-card">
+          <div class="hero-media-col">
+            <img src="./images/celeste_hero.svg" alt="Astral Velvet by Celeste Vance" class="hero-portrait-img" />
+          </div>
+          <div class="hero-copy-col">
+            <span class="eyebrow-tag">🌙 PRECISION EPHEMERIS &amp; NATAL SANCTUARY</span>
+            <h2>“Your birth chart is a living celestial architecture — built for timing, sovereignty, and aligned abundance.”</h2>
+            <p class="hero-subcopy">
+              Explore your exact planetary degrees (<code>° ' "</code>), your <strong>North &amp; South Node destiny</strong>, your <strong>2nd &amp; 8th house wealth rulers</strong>, and <strong>8 signature asteroids</strong> against today’s live NASA JPL sky.
+            </p>
+            <div class="hero-cta-row">
+              <button class="btn-primary btn-sm" data-goto-tab="chart">🧭 Cast My 360° Natal Chart</button>
+              <button class="btn-outline btn-sm" data-goto-tab="numbers">✦ Angel &amp; Timing Decoder</button>
+              <button class="btn-outline btn-sm" data-goto-tab="sanctuary">🎧 Somatic Sound Bath</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sky Weather Banner -->
+        <div class="glass-card section-card">
+          <div class="section-header-row">
+            <div>
+              <span class="eyebrow-tag">⚡ LIVE SKY EPHEMERIS</span>
+              <h3 id="sky-headline">Loading Today’s Celestial Weather...</h3>
+            </div>
+            <span id="sky-moon-phase" class="status-pill">🌙 Calculating...</span>
+          </div>
+          <p id="helena-daily-brief" class="helena-quote-box"></p>
+          <div id="sky-pills-row" class="chips-wrap"></div>
+        </div>
+
+        <!-- Personal Transit Radar + Scrubber -->
+        <div class="glass-card section-card">
+          <div class="section-header-row">
+            <div>
+              <span class="eyebrow-tag">🧭 PERSONAL TRANSIT RADAR</span>
+              <h3>Live Aspects To Your Natal Chart</h3>
+            </div>
+            <div class="scrubber-controls">
+              <button id="transit-prev-btn" class="btn-icon" title="Previous Day">◀</button>
+              <input type="date" id="transit-date-input" class="date-input-pill" />
+              <button id="transit-today-btn" class="btn-chip-xs">Today</button>
+              <button id="transit-next-btn" class="btn-icon" title="Next Day">▶</button>
+            </div>
+          </div>
+          <p class="muted-note">Real-time planetary aspects activating your natal placements, North/South Nodes, and house cusps.</p>
+          <div id="personal-transits-list" class="stack-list"></div>
+        </div>
+
+        <!-- Midnight 12-Sign Horoscopes -->
+        <div class="glass-card section-card">
+          <div class="section-header-row">
+            <div>
+              <span class="eyebrow-tag">🕛 MIDNIGHT 12-SIGN TRANSMISSIONS</span>
+              <h3>Daily Placement Readings</h3>
+            </div>
+            <span id="horoscope-date-badge" class="status-pill">Live Ephemeris</span>
+          </div>
+          <p class="muted-note">Read for your <strong>Rising Sign first</strong> (for exact whole-sign house accuracy), then your Sun &amp; Moon.</p>
+
+          <div id="sign-selector-grid" class="sign-pills-grid"></div>
+
+          <div class="lens-tabs-row">
+            <button class="lens-tab active" data-lens="rising_sun_reading">☉ Rising &amp; Solar Focus</button>
+            <button class="lens-tab" data-lens="venus_money_love">💎 2H/8H Prosperity &amp; Love</button>
+            <button class="lens-tab" data-lens="moon_nervous_system">🌙 Lunar Somatic Reset</button>
+          </div>
+
+          <div id="active-horoscope-card" class="horoscope-display-card"></div>
+        </div>
+
+        <!-- Today's Birthday Solar Return -->
+        <div id="birthday-card-box" class="glass-card section-card birthday-spotlight"></div>
+      </section>
+
+      <!-- ==================== TAB 2: NATAL CHART ==================== -->
+      <section id="tab-chart" class="tab-pane">
+        <div class="glass-card section-card">
+          <div class="section-header-row">
+            <div>
+              <span class="eyebrow-tag">🧭 360° WHOLE-SIGN EPHEMERIS WHEEL</span>
+              <h3 id="chart-title-heading">Your Natal Chart &amp; Dossier</h3>
+              <p id="chart-meta-sub" class="muted-note"></p>
+            </div>
+            <div class="row-actions">
+              <button id="edit-chart-btn-2" class="btn-chip-xs">✏️ Edit Birth Info</button>
+              <button id="download-wheel-btn" class="btn-chip-xs">⬇ Save Wheel SVG</button>
+            </div>
+          </div>
+
+          <div id="natal-wheel-wrap" class="wheel-container"></div>
+
+          <div class="subtab-bar">
+            <button class="subtab-btn active" data-subtab="sub-big3">👑 Big 3 &amp; Nodes</button>
+            <button class="subtab-btn" data-subtab="sub-wealth">💎 2H/8H Wealth</button>
+            <button class="subtab-btn" data-subtab="sub-asteroids">☄️ 8 Asteroids</button>
+            <button class="subtab-btn" data-subtab="sub-shield">🛡️ Boundaries &amp; Degrees</button>
+            <button class="subtab-btn" data-subtab="sub-bali">🕯️ Lineage &amp; Sanctuary</button>
+          </div>
+
+          <div id="sub-big3" class="subtab-pane active"></div>
+          <div id="sub-wealth" class="subtab-pane"></div>
+          <div id="sub-asteroids" class="subtab-pane"></div>
+          <div id="sub-shield" class="subtab-pane"></div>
+          <div id="sub-bali" class="subtab-pane"></div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 3: PORTALS & NUMEROLOGY ==================== -->
+      <section id="tab-numbers" class="tab-pane">
+        <div class="glass-card section-card">
+          <span class="eyebrow-tag">✦ PLANETARY SYNCHRONICITY &amp; TIMING</span>
+          <h3>Angel Number &amp; House Decoder</h3>
+          <p class="muted-note">
+            Tap any repeating sequence to decode its planetary ruler and the exact house axis it activates.
+          </p>
+
+          <div id="angel-buttons-grid" class="angel-grid"></div>
+          <div id="angel-result-box" class="portal-decode-card"></div>
+        </div>
+
+        <div class="glass-card section-card">
+          <span class="eyebrow-tag">⏳ PERSONAL CYCLES</span>
+          <h3>Your Life Path &amp; Personal Year Timing</h3>
+          <div id="numerology-grid-box" class="num-stats-grid"></div>
+          <div id="numerology-details-box" class="stack-list"></div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 4: SANCTUARY (SOUND BATH) ==================== -->
+      <section id="tab-sanctuary" class="tab-pane">
+        <div class="glass-card section-card">
+          <span class="eyebrow-tag">🎧 SOMATIC NERVOUS-SYSTEM CO-REGULATION</span>
+          <h3>Harmonic Sound Bath &amp; Guided Rituals</h3>
+          <p class="muted-note">
+            Real-time Web Audio harmonic frequencies designed to ground your nervous system and integrate heavy planetary transits.
+          </p>
+
+          <div class="sound-bath-box">
+            <div id="breathing-orb" class="crucible-breath-orb">
+              <span id="breath-instruction">Tap a Frequency to Begin</span>
+            </div>
+            <div class="freq-buttons-row">
+              <button class="freq-btn" data-freq="432">🌙 432 Hz Lunar Sanctuary</button>
+              <button class="freq-btn" data-freq="528">💎 528 Hz Venusian Abundance</button>
+              <button class="freq-btn" data-freq="396">🕯️ 396 Hz Karmic Cord Release</button>
+              <button id="stop-audio-btn" class="freq-btn freq-stop">⏹ Stop Sound</button>
+            </div>
+          </div>
+
+          <div class="protocol-grid">
+            <div class="protocol-card">
+              <h4>🌙 1. Lunar Salt-Water Immersion</h4>
+              <p>When your 12th house or Moon placement feels saturated by collective noise, immerse in warm salt water to clear residual static and restore your intuitive boundary.</p>
+            </div>
+            <div class="protocol-card">
+              <h4>🧭 2. North Node Morning Alignment</h4>
+              <p>Before checking messages each morning, align with your North Node house—choosing one courageous action that moves your long-term mission forward.</p>
+            </div>
+            <div class="protocol-card">
+              <h4>💎 3. 2nd/8th House Prosperity Audit</h4>
+              <p>On Fridays (Venus day), review your pricing, savings, and energetic reciprocity so your material containers match your true value.</p>
+            </div>
+            <div class="protocol-card">
+              <h4>🛡️ 4. Saturnian Boundary Lock</h4>
+              <p>During retrograde or square transits, pause before reacting. Protect your peace by letting clarity replace urgency.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 5: ALIGNMENT METER ==================== -->
+      <section id="tab-softlife" class="tab-pane">
+        <div class="glass-card section-card">
+          <span class="eyebrow-tag">🌱 DAILY COSMIC ALIGNMENT</span>
+          <h3>Sovereign Ritual &amp; Boundary Meter</h3>
+          <p class="muted-note">
+            Track your daily nervous-system care, boundary integrity, and intentional wealth habits.
+          </p>
+
+          <div class="meter-flex-wrap">
+            <div class="meter-ring-box">
+              <svg viewBox="0 0 140 140" class="meter-svg">
+                <circle cx="70" cy="70" r="58" class="meter-bg-circle" />
+                <circle id="softlife-progress-circle" cx="70" cy="70" r="58" class="meter-fg-circle" stroke-dasharray="364.4" stroke-dashoffset="364.4" />
+              </svg>
+              <div class="meter-center-label">
+                <span id="softlife-pct-text">0%</span>
+                <small>ALIGNED</small>
+              </div>
+            </div>
+            <div class="meter-status-copy">
+              <h4 id="softlife-status-title">Calibrating Your Frequency...</h4>
+              <p id="softlife-status-desc" class="muted-note">Check off your daily rituals below to charge your alignment ring.</p>
+              <button id="reset-softlife-btn" class="btn-chip-xs">↻ Reset Today</button>
+            </div>
+          </div>
+
+          <div id="softlife-checklist" class="checklist-stack"></div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 6: JOURNAL & STORY CARD STUDIO ==================== -->
+      <section id="tab-diary" class="tab-pane">
+        <div class="glass-card section-card">
+          <span class="eyebrow-tag">📓 PRIVATE CELESTIAL JOURNAL &amp; STORY STUDIO</span>
+          <h3>Reflections &amp; 1080×1350 Shareable Cards</h3>
+          <p class="muted-note">
+            Save private transit reflections on your device or export a custom 1080×1350 Midnight Sapphire &amp; Gold card for Instagram Stories.
+          </p>
+
+          <div class="prompt-chips-row">
+            <button class="prompt-chip" data-prompt="My North Node is calling me to step boldly into ">🧭 North Node Intention</button>
+            <button class="prompt-chip" data-prompt="Today I am releasing the old South Node habit of ">🕯️ South Node Release</button>
+            <button class="prompt-chip" data-prompt="In my 2nd/8th house wealth blueprint, I am claiming ">💎 Prosperity Claim</button>
+            <button class="prompt-chip" data-prompt="Intuitive synchronicity I noticed today: ">✦ Synchronicity Note</button>
+          </div>
+
+          <textarea id="diary-textarea" class="grimoire-textarea" rows="4" placeholder="Write your cosmic reflection, dream download, or intention..."></textarea>
+
+          <div class="diary-actions-row">
+            <button id="save-diary-btn" class="btn-primary btn-sm">💾 Save To Private Journal</button>
+            <button id="export-ig-card-btn" class="btn-outline btn-sm">📸 Export 1080×1350 Story Card PNG</button>
+          </div>
+
+          <div id="diary-entries-list" class="stack-list" style="margin-top: 18px;"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom 6-Tab Navigation -->
+    <nav class="bottom-nav glass-card">
+      <button class="nav-tab active" data-tab="today">
+        <span class="nav-icon">✨</span>
+        <span class="nav-label">Today</span>
+      </button>
+      <button class="nav-tab" data-tab="chart">
+        <span class="nav-icon">🧭</span>
+        <span class="nav-label">Chart</span>
+      </button>
+      <button class="nav-tab" data-tab="numbers">
+        <span class="nav-icon">444</span>
+        <span class="nav-label">Portals</span>
+      </button>
+      <button class="nav-tab" data-tab="sanctuary">
+        <span class="nav-icon">🎧</span>
+        <span class="nav-label">Sanctuary</span>
+      </button>
+      <button class="nav-tab" data-tab="softlife">
+        <span class="nav-icon">🌱</span>
+        <span class="nav-label">Align</span>
+      </button>
+      <button class="nav-tab" data-tab="diary">
+        <span class="nav-icon">📓</span>
+        <span class="nav-label">Journal</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Birth Data Modal -->
+  <div id="birth-modal" class="modal-backdrop hidden">
+    <div class="modal-card glass-card">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow-tag">🧭 EXACT NATAL COORDINATES</span>
+          <h3>Cast Your Personal Birth Chart</h3>
+        </div>
+        <button id="close-birth-modal-btn" class="btn-icon">✕</button>
+      </div>
+      <p class="muted-note" style="margin-bottom: 14px;">
+        Enter your birth date, exact time, and city (11M+ locations worldwide) to calculate your Rising Sign, Whole-Sign Houses, 8 Asteroids, and live transits.
+      </p>
+      <form id="birth-form" class="form-stack">
+        <label class="form-label">
+          <span>Your Name</span>
+          <input type="text" id="input-name" class="form-input" placeholder="e.g. Aria" required />
+        </label>
+        <div class="form-row-2">
+          <label class="form-label">
+            <span>Birth Date</span>
+            <input type="date" id="input-date" class="form-input" required />
+          </label>
+          <label class="form-label">
+            <span>Exact Birth Time</span>
+            <input type="time" id="input-time" class="form-input" required />
+          </label>
+        </div>
+        <label class="form-label">
+          <span>Birth City (Worldwide Geocoder)</span>
+          <input type="text" id="input-city" class="form-input" placeholder="e.g. New York, London, Los Angeles, Tokyo, Paris" required />
+        </label>
+        <div class="modal-footer-btns">
+          <button type="submit" class="btn-primary" style="width:100%;">✦ Cast My Birth Chart</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./engine-browser.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
+

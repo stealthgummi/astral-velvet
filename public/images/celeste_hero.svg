@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" width="600" height="680">
+  <defs>
+    <radialGradient id="cosmos" cx="50%" cy="38%" r="68%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#05070F"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="45%" stop-color="#E2B86B"/>
+      <stop offset="100%" stop-color="#9A6B22"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E2B86B" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#818CF8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#05070F" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="680" rx="28" fill="url(#cosmos)"/>
+  <circle cx="300" cy="290" r="250" fill="url(#halo)"/>
+  <!-- Outer Astrolabe Rings -->
+  <circle cx="300" cy="290" r="220" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-opacity="0.65"/>
+  <circle cx="300" cy="290" r="188" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="4,6" stroke-opacity="0.55"/>
+  <circle cx="300" cy="290" r="142" fill="none" stroke="#818CF8" stroke-width="1.2" stroke-opacity="0.4"/>
+  <!-- Crosshairs -->
+  <line x1="60" y1="290" x2="540" y2="290" stroke="url(#goldGrad)" stroke-opacity="0.28" stroke-width="1.2"/>
+  <line x1="300" y1="50" x2="300" y2="530" stroke="url(#goldGrad)" stroke-opacity="0.28" stroke-width="1.2"/>
+  <!-- Zodiac Glyphs Around Ring -->
+  <text x="300" y="92" text-anchor="middle" fill="#FDE68A" font-size="20">♈</text>
+  <text x="402" y="118" text-anchor="middle" fill="#FDE68A" font-size="20">♉</text>
+  <text x="478" y="192" text-anchor="middle" fill="#FDE68A" font-size="20">♊</text>
+  <text x="504" y="296" text-anchor="middle" fill="#FDE68A" font-size="20">♋</text>
+  <text x="478" y="400" text-anchor="middle" fill="#FDE68A" font-size="20">♌</text>
+  <text x="402" y="472" text-anchor="middle" fill="#FDE68A" font-size="20">♍</text>
+  <text x="300" y="498" text-anchor="middle" fill="#FDE68A" font-size="20">♎</text>
+  <text x="198" y="472" text-anchor="middle" fill="#FDE68A" font-size="20">♏</text>
+  <text x="122" y="400" text-anchor="middle" fill="#FDE68A" font-size="20">♐</text>
+  <text x="96" y="296" text-anchor="middle" fill="#FDE68A" font-size="20">♑</text>
+  <text x="122" y="192" text-anchor="middle" fill="#FDE68A" font-size="20">♒</text>
+  <text x="198" y="118" text-anchor="middle" fill="#FDE68A" font-size="20">♓</text>
+  <!-- Central Celestial Sun & Crescent -->
+  <path d="M322 195 A95 95 0 1 0 322 385 A76 76 0 1 1 322 195 Z" fill="url(#goldGrad)" opacity="0.88"/>
+  <path d="M300 205 L312 268 L375 280 L312 292 L300 355 L288 292 L225 280 L288 268 Z" fill="url(#goldGrad)"/>
+  <circle cx="300" cy="280" r="10" fill="#FFFFFF"/>
+  <!-- Editorial Caption -->
+  <text x="300" y="585" text-anchor="middle" fill="#FFFBEB" font-family="Georgia, serif" font-size="26" font-weight="bold" letter-spacing="4">ASTRAL VELVET ✦</text>
+  <text x="300" y="618" text-anchor="middle" fill="#E2B86B" font-family="sans-serif" font-size="14" font-weight="bold" letter-spacing="3">CELESTE VANCE · @CELESTEVANCE.ASTRO</text>
+  <text x="300" y="644" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="12" letter-spacing="1.5">PRECISION EPHEMERIS · NATAL DOSSIER · SANCTUARY</text>
+</svg>
+

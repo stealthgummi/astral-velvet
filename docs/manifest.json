@@ -1,0 +1,19 @@
+{
+  "name": "Astral Velvet ✦ by Celeste Vance",
+  "short_name": "Astral Velvet",
+  "description": "Personal NASA JPL Ephemeris, 360° Natal Chart Dossier, 8 Signature Asteroids & Somatic Sound Sanctuary by Celeste Vance (@celestevance.astro).",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060913",
+  "theme_color": "#0B1022",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/celeste_avatar.svg",
+      "sizes": "240x240",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
